@@ -1,11 +1,12 @@
 let wordlist = [
-  "abacus",
-  "collegial",
-  "dogleg",
-  "stertorous",
-  "raft",
-  "syndicate",
-  "benison",
+    "voluminous",
+    "fragile",
+    "nautilus",
+    "thievery",
+    "dragoon",
+    "yuzu",
+    "ritziness",
+    "lanceolate"
 ]
 
 export default wordlist
