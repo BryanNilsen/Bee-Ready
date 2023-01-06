@@ -1,59 +1,75 @@
-import React, { Component } from 'react';
-import Speak from './Speak'
+import React, { useState, useEffect } from 'react';
+import SpeakerOptions from './components/SpeakerOptions'
+import WordDataOptions from './components/WordDataOptions'
 import './App.css';
 import wordlist from './WordList'
+import TextInput from './components/TextInput';
 
-class App extends Component {
-  state = {
-    voices: [],
-    currentVoice: {},
-  };
+export default function App() {
+    const [voices, setVoices] = useState([]);
+    const [currentVoice, setCurrentVoice] = useState({});
+    const [wordId, setWordId] = useState(0);
 
-  componentDidMount() {
-    window.speechSynthesis.onvoiceschanged = () => {
-      this.getVoices()
+    useEffect(() => {
+        window.speechSynthesis.onvoiceschanged = () => {
+            getVoices()
+        }
+    }, []);
+
+    const getVoices = () => {
+        const voices = window.speechSynthesis.getVoices();
+        const voiceArray = voices.filter(voice => voice.lang === 'en-US');
+        setVoices(voiceArray);
     }
-  }
+    const handleVoiceSelect = (event) => {
+        const voiceNum = event.target.value
+        setCurrentVoice(voiceNum)
+    }
 
-  getVoices = () => {
-    const voices = window.speechSynthesis.getVoices()
-    console.log("voices", voices)
-    const voiceArray = voices.filter(voice => voice.lang === 'en-US' || voice.lang === 'en-GB')
-    this.setState({ voices: voiceArray })
-  }
+    const speak = (text) => {
+        const synth = window.speechSynthesis;
+        var utterThis = new SpeechSynthesisUtterance(text);
+        // utterThis.rate = .8
+        utterThis.voice = voices[currentVoice]
+        synth.speak(utterThis)
+    }
 
+    const speakNextWord = () => {
+        let num = wordId
+        num++
+        if (num < wordlist.length) {
+            setWordId(num);
+            speak(wordlist[num])
+        } else {
+            alert("you've completed the wordlist")
+        }
+    }
 
-
-  handleVoiceSelect = (event) => {
-    const voiceNum = event.target.value
-    this.setState({ currentVoice: voiceNum })
-  }
-
-  speak = (text) => {
-    const synth = window.speechSynthesis;
-    var utterThis = new SpeechSynthesisUtterance(text);
-    utterThis.rate = .8
-    utterThis.voice = this.state.voices[this.state.currentVoice]
-    synth.speak(utterThis)
-  }
-
-
-
-
-  render() {
     return (
-      <div>
-        <h1>Bee-Ready</h1>
-        <select name="voice" id="voice" onChange={(event) => this.handleVoiceSelect(event)}>
-          {this.state.voices.map((voice, i) => <option key={i} value={i}>{voice.name}</option>)}
-        </select>
-        <hr />
-        <button onClick={() => this.speak(wordlist[0])}>SPEAK</button>
-        {/* <Speak number={this.state.number} /> */}
-      </div>
+        <>
+            <nav className='topnav'>
+                <h1 className="beetext">BEE-READY</h1>
+            </nav>
+            <div>
+                <SpeakerOptions
+                    handleVoiceSelect={handleVoiceSelect}
+                    voices={voices}
+                />
+                {/* speak word controls */}
+                <button onClick={() => {
+                    speak(wordlist[wordId])
+                }}>SAY WORD</button>
+                <button onClick={() => {
+                    speakNextWord()
+                }}>NEXT WORD</button>
+                {/* word data attribute buttons */}
+                <WordDataOptions
+                    speak={speak}
+                    wordlist={wordlist}
+                    wordId={wordId}
+                />
+                <TextInput word={wordlist[wordId]} />
+            </div>
+        </>
     );
-  }
 }
-
-export default App;
-
