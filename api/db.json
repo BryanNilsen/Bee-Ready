@@ -1,30 +1,44 @@
 {
-  "wordlists": [
-    {
-      "id": 0,
-      "name": "listone",
-      "words": [
-        "gradual",
-        "incendiary",
-        "ferocious",
-        "frequently",
-        "permission",
-        "towel",
-        "sundae",
-        "ornament",
-        "rooster",
-        "scold",
-        "organza",
-        "fragile",
-        "galaxy",
-        "complaint",
-        "curries",
-        "tennis",
-        "grumbling",
-        "garlic",
-        "testimony",
-        "helicopter"
-      ]
-    }
-  ]
+    "wordlists": [
+        {
+            "id": 0,
+            "name": "OneBee-2",
+            "words": [
+                "adds",
+                "sit",
+                "cry",
+                "put",
+                "look",
+                "hey",
+                "tell",
+                "none",
+                "need",
+                "poke",
+                "drag",
+                "off",
+                "long",
+                "grass",
+                "came",
+                "make",
+                "had",
+                "trees",
+                "can",
+                "not",
+                "plan",
+                "sink",
+                "tote",
+                "hint",
+                "rice",
+                "doll",
+                "bill",
+                "pants",
+                "nets"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "OneBee-3",
+            "words": []
+        }
+    ]
 }

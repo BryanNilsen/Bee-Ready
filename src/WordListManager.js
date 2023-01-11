@@ -4,6 +4,9 @@ const WordListManager = {
     getWordLists() {
         return fetch(`${APIUrl}/wordlists`).then((response) => response.json());
     },
+    getWordListById(id) {
+        return fetch(`${APIUrl}/wordlists/${id}`).then((response) => response.json());
+    },
     updateWordlist(wordlist) {
         return fetch(`${APIUrl}/wordlists/0`, {
             method: "PUT",

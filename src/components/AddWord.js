@@ -18,6 +18,11 @@ export default function AddWord(props) {
             props.updateWordlist(copyOfWordlist)
         }
     }
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSubmit()
+        }
+    };
 
 
     return (
@@ -25,7 +30,7 @@ export default function AddWord(props) {
             <div className="container">
                 <label>
                     Add Word:
-                    <input type="text" className="guessInput" name="addwordinput" onChange={handleChange} value={input} />
+                    <input type="text" className="guessInput" name="addwordinput" onKeyDown={handleKeyDown} onChange={handleChange} value={input} />
                 </label>
                 <input type="button" onClick={handleSubmit} value="Add Word to List" />
             </div>

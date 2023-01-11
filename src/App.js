@@ -7,13 +7,17 @@ import TextInput from './components/TextInput';
 import WordHistory from './components/WordHistory';
 import WordListManager from './WordListManager';
 import AddWord from './components/AddWord';
+import WordList from './components/WordList';
+import WordListSelect from './components/WordListSelect';
 
 export default function App() {
     const [voices, setVoices] = useState([]);
     const [currentVoice, setCurrentVoice] = useState({});
+    const [wordlistId, setWordlistId] = useState(0);
     const [wordId, setWordId] = useState(0);
     const [wordHistory, setWordHistory] = useState([]);
     const [wordlist, setWordlist] = useState(null);
+    const [wordlists, setWordlists] = useState([]);
 
     useEffect(() => {
         window.speechSynthesis.onvoiceschanged = () => {
@@ -21,23 +25,38 @@ export default function App() {
         }
     }, []);
 
-    const getWordList = () => {
+    const getWordLists = () => {
         return WordListManager.getWordLists().then(wordlists => {
-            setWordlist(wordlists[0])
+            setWordlists(wordlists)
         })
+    }
+    const getWordList = () => {
+        return WordListManager.getWordListById(wordlistId).then(wordlist => {
+            setWordlist(wordlist)
+        })
+    }
+    const handleWordlistSelect = (event) => {
+        const wordlistId = event.target.value
+        setWordlistId(wordlistId)
     }
 
     const updateWordlist = (wordlist) => {
         return WordListManager.updateWordlist(wordlist).then(getWordList)
     }
     useEffect(() => {
-        getWordList()
+        getWordList(wordlistId)
+    }, [wordlistId]);
+
+    useEffect(() => {
+        getWordLists()
     }, []);
 
     const getVoices = () => {
         const voices = window.speechSynthesis.getVoices();
         const voiceArray = voices.filter(voice => voice.lang === 'en-US');
+        console.log(voiceArray);
         setVoices(voiceArray);
+        setCurrentVoice(4)
     }
     const handleVoiceSelect = (event) => {
         const voiceNum = event.target.value
@@ -70,10 +89,10 @@ export default function App() {
             </nav>
             <div>
 
-                <SpeakerOptions
+                {/* <SpeakerOptions
                     handleVoiceSelect={handleVoiceSelect}
                     voices={voices}
-                />
+                /> */}
                 {/* speak word controls */}
                 <button onClick={() => {
                     speak(wordlist.words[wordId])
@@ -92,8 +111,10 @@ export default function App() {
                         />
 
                         <TextInput word={wordlist.words[wordId]} setWordHistory={setWordHistory} nextWord={nextWord} />
-                        <WordHistory wordlist={wordlist.words} wordHistory={wordHistory} />
+                        {/* <WordHistory wordlist={wordlist.words} wordHistory={wordHistory} /> */}
+                        <WordListSelect wordlists={wordlists} handleWordlistSelect={handleWordlistSelect} />
                         <AddWord wordlist={wordlist} updateWordlist={updateWordlist} />
+                        <WordList wordlist={wordlist.words} />
                     </>
                 )}
 
