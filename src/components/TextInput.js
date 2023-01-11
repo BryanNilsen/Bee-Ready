@@ -17,6 +17,7 @@ export default function TextInput(props) {
         const message = props.word === input ? "correct" : "incorrect";
         setMessage(message);
         setShowMessage(true);
+        props.nextWord();
         // if correct, app level needs function to increase num correct and move to next word
     }
 

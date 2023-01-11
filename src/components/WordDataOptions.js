@@ -31,16 +31,16 @@ function WordDataOptions(props) {
 
     return (
         <div className="container">
-            <button onClick={() => {
+            <button className="btn-worddata" onClick={() => {
                 props.speak(wordData.shortdef[0])
-            }}>Short Definition</button>
-            <button onClick={() => {
+            }}>Definition</button>
+            <button className="btn-worddata" onClick={() => {
                 props.speak(wordData.fl)
             }}>Part of Speech</button>
-            <button onClick={() => {
+            <button className="btn-worddata" onClick={() => {
                 dictionaryPronunciation()
             }}>Dictionary Pronunciation</button>
-            <button onClick={() => {
+            <button className="btn-worddata" onClick={() => {
                 props.speak(getEtymology())
             }}>Etymology</button>
         </div>

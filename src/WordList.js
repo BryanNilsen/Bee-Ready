@@ -1,4 +1,4 @@
-let wordlist = [
+let test = [
     "voluminous",
     "fragile",
     "nautilus",
@@ -6,7 +6,28 @@ let wordlist = [
     "dragoon",
     "yuzu",
     "ritziness",
-    "lanceolate"
+    "lanceolate",
 ]
+
+const wordlist = [
+    "gradual",
+    "ferocious",
+    "frequently",
+    "permission",
+    "towel",
+    "sundae",
+    "ornament",
+    "rooster",
+    "scold",
+    "organza",
+    "fragile",
+    "galaxy",
+    "complaint",
+    "curries",
+    "tennis",
+    "grumbling",
+    "garlic"
+]
+
 
 export default wordlist
