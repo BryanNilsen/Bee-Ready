@@ -41,7 +41,7 @@ export default function App() {
     }
 
     const updateWordlist = (wordlist) => {
-        return WordListManager.updateWordlist(wordlist).then(getWordList)
+        return WordListManager.updateWordlist(wordlist, wordlistId).then(getWordList)
     }
     useEffect(() => {
         getWordList(wordlistId)

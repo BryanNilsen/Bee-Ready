@@ -7,8 +7,8 @@ const WordListManager = {
     getWordListById(id) {
         return fetch(`${APIUrl}/wordlists/${id}`).then((response) => response.json());
     },
-    updateWordlist(wordlist) {
-        return fetch(`${APIUrl}/wordlists/0`, {
+    updateWordlist(wordlist, id) {
+        return fetch(`${APIUrl}/wordlists/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

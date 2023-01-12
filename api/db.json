@@ -1,44 +1,167 @@
 {
-    "wordlists": [
-        {
-            "id": 0,
-            "name": "OneBee-2",
-            "words": [
-                "adds",
-                "sit",
-                "cry",
-                "put",
-                "look",
-                "hey",
-                "tell",
-                "none",
-                "need",
-                "poke",
-                "drag",
-                "off",
-                "long",
-                "grass",
-                "came",
-                "make",
-                "had",
-                "trees",
-                "can",
-                "not",
-                "plan",
-                "sink",
-                "tote",
-                "hint",
-                "rice",
-                "doll",
-                "bill",
-                "pants",
-                "nets"
-            ]
-        },
-        {
-            "id": 1,
-            "name": "OneBee-3",
-            "words": []
-        }
-    ]
+  "wordlists": [
+    {
+      "id": 0,
+      "name": "OneBee-2",
+      "words": [
+        "adds",
+        "bill",
+        "harsh",
+        "bobbed"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "OneBee-3",
+      "words": [
+        "gradual",
+        "bedlam",
+        "gargantuan",
+        "gimmick",
+        "monopolize",
+        "target",
+        "ferocious"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "OneBee-4",
+      "words": [
+        "thawed",
+        "mince",
+        "puzzles",
+        "whirlybird",
+        "kennel",
+        "scrapple",
+        "uncle"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "OneBee-5",
+      "words": [
+        "groom",
+        "amusement",
+        "riddance",
+        "bungee",
+        "charitable",
+        "corkscrew",
+        "trice"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "OneBee-6",
+      "words": [
+        "stupa",
+        "veered",
+        "scuppers",
+        "blink",
+        "quonk",
+        "cantor",
+        "slab"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "TwoBee-1",
+      "words": [
+        "comic",
+        "sparrow",
+        "limbering",
+        "balm",
+        "scrawled",
+        "contours",
+        "awesome"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "TwoBee-2",
+      "words": [
+        "hexagonal",
+        "unabated",
+        "beaucoup",
+        "endorphin",
+        "cinnamon"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "TwoBee-3",
+      "words": [
+        "luminance",
+        "demographics",
+        "lupine",
+        "ingenuous",
+        "chancellor",
+        "trefoil",
+        "adjective"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "TwoBee-4",
+      "words": [
+        "phosphorescent",
+        "beguile",
+        "egress",
+        "antagonistic",
+        "drivel",
+        "recruit",
+        "anxiety"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "TwoBee-5",
+      "words": [
+        "adage",
+        "Neapolitan",
+        "caricature",
+        "bittern",
+        "twilight",
+        "regurgitate",
+        "cicada"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "TwoBee-6",
+      "words": [
+        "calculator",
+        "epidermis",
+        "occupancy",
+        "stagflation",
+        "lorikeet",
+        "herringbone",
+        "corduroy"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "TwoBee-7",
+      "words": []
+    },
+    {
+      "id": 12,
+      "name": "TwoBee-8",
+      "words": []
+    },
+    {
+      "id": 13,
+      "name": "TwoBee-9",
+      "words": []
+    },
+    {
+      "id": 14,
+      "name": "TwoBee-10",
+      "words": []
+    },
+    {
+      "id": 15,
+      "name": "TwoBee-11",
+      "words": []
+    }
+  ]
 }

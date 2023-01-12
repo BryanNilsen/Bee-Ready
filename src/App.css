@@ -57,9 +57,10 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.wordlist-word{
-    text-align: left;
+.wordlist-word {
+    text-align: center;
+    padding: .5em 0;
 }
