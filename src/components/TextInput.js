@@ -14,10 +14,12 @@ export default function TextInput(props) {
     }, [props.word])
 
     const handleSubmit = () => {
-        const message = props.word === input ? "correct" : "incorrect";
+        let message = "Correct!!";
+        if (props.word !== input) {
+            message = `Incorrect. The word is ${props.word}`;
+        }
         setMessage(message);
         setShowMessage(true);
-        props.nextWord();
         // if correct, app level needs function to increase num correct and move to next word
     }
 
@@ -36,7 +38,7 @@ export default function TextInput(props) {
                 <input type="button" onClick={handleSubmit} value="Check" />
             </div>
             <div className="container">
-                <p className={showMessage ? "" : "hidden"}>{message}</p>
+                <p className={showMessage ? "guess-message" : "hidden"}>{message}</p>
             </div>
         </>
     )

@@ -37,7 +37,8 @@ export default function App() {
     }
     const handleWordlistSelect = (event) => {
         const wordlistId = event.target.value
-        setWordlistId(wordlistId)
+        setWordlistId(wordlistId);
+        setWordId(0);
     }
 
     const updateWordlist = (wordlist) => {

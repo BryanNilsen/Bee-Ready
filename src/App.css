@@ -64,3 +64,8 @@ body {
     text-align: center;
     padding: .5em 0;
 }
+
+.guess-message{
+    font-weight: bold;
+    font-size: 2em;
+}

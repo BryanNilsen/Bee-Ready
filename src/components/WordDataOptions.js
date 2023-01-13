@@ -18,7 +18,11 @@ function WordDataOptions(props) {
         const startsWith = prs.charAt(0)
         const wavAddress = `https://media.merriam-webster.com/soundc11/${startsWith}/${prs}.wav`
         const audio = new Audio(wavAddress)
-        audio.play()
+        try {
+            audio.play()
+        } catch (error) {
+            alert("no pronunciation available")
+        }
     }
 
 
