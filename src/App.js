@@ -89,6 +89,7 @@ export default function App() {
                 <h1 className="beetext">BEE-READY</h1>
             </nav>
             <div>
+                <WordListSelect wordlists={wordlists} handleWordlistSelect={handleWordlistSelect} />
 
                 {/* <SpeakerOptions
                     handleVoiceSelect={handleVoiceSelect}
@@ -113,7 +114,6 @@ export default function App() {
 
                         <TextInput word={wordlist.words[wordId]} setWordHistory={setWordHistory} nextWord={nextWord} />
                         {/* <WordHistory wordlist={wordlist.words} wordHistory={wordHistory} /> */}
-                        <WordListSelect wordlists={wordlists} handleWordlistSelect={handleWordlistSelect} />
                         <AddWord wordlist={wordlist} updateWordlist={updateWordlist} />
                         <WordList wordlist={wordlist.words} />
                     </>
